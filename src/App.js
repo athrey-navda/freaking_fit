@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Workout from "./pages/Workout";
 import "./style/css/style.css";
 import SignIn from "./pages/signIn";
@@ -10,6 +11,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import Community from "./pages/Community";
 import Diet from "./pages/Diet";
 import PrivateRoute from "./components/PrivateRoute";
+import Help from "./pages/Help";
 
 function App() {
     return (
@@ -27,29 +29,38 @@ function App() {
                     <Route
                         path="/workouts"
                         element={
-                            <PrivateRoute>
-                                <Workout />
-                            </PrivateRoute>
+                            // <PrivateRoute>
+                            <Workout />
+                            // </PrivateRoute>
                         }
                     />
                     <Route
                         path="/community"
                         element={
-                            <PrivateRoute>
-                                <Community />
-                            </PrivateRoute>
+                            // <PrivateRoute>
+                            <Community />
+                            // </PrivateRoute>
                         }
                     />
                     <Route
                         path="/diet"
                         element={
+                            // <PrivateRoute>
+                            <Diet />
+                            // </PrivateRoute>
+                        }
+                    />
+                    <Route
+                        path="/help"
+                        element={
                             <PrivateRoute>
-                                <Diet />
+                                <Help />
                             </PrivateRoute>
                         }
                     />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
+	              <Footer />
             </BrowserRouter>
         </div>
     );
